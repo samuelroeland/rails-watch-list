@@ -1,33 +1,49 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto justify-content-between">
+         <li class='nav-item active '>
+            <%= link_to "Add a new list", new_list_path, class:'btn btn-light rounded-2' %>
+          </li>
 
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container">
-    <h1>All Lists:</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat"><%= link_to "NEW", new_list_path %></a>
+
+          <!--li class="nav-item"-->
+          <!--/li-->
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="banner w-100" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://st.depositphotos.com/3877249/56850/v/600/depositphotos_568504382-stock-illustration-night-open-air-cinema-on.jpg);">
+  <div class="container d-flex justify-content-between">
+    <h1>All Movie Lists:</h1>
+
   </div>
 </div>
   <%#= link_to "Create new list", new_list_path %>
 
+<div class="movie-lists d-flex rounded-2">
   <% @lists.each do |list| %>
-    <li>
-    <%= link_to "#{list.name}", list_path(list) %>
-    </li>
-  <% end %>
-</div>
-
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h2>
-        <% @lists.each do |list| %>
-         <%= link_to "#{list.name}", list_path(list) %>
-        <% end %>
-      </h2>
-      <p>Short description here!</p>
+    <div class="card-trip m-3">
+      <img src= "https://phenixcitylibrary.com/wp-content/uploads/2017/06/Movie-Night.jpg" />
+      <div class="card-trip-infos">
+        <div>
+        <h2 class='text-decoration-none'>
+          <%= link_to "#{list.name}", list_path(list) %>
+          <p>Short description here!</p>
+        </div>
+        </h2>
+        <h2 class="card-trip-pricing"></h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
     </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-  </div>
+    <% end %>
 </div>
